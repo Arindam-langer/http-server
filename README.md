@@ -20,6 +20,11 @@ so to make a http server you first need a socket. Now what is a socket?? Sockets
 
 1. create a socket
 2. bind the socket to ports
+3. listen for incoming connections
+4. accept the connection
+5. read and write data
+6. close the socket
+ the end
 
 
 
