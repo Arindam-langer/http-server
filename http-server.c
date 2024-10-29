@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <winsock2.h>
-
+#define PORT_NUMBER 3000
 int main() 
 {
     WSADATA wsa;
@@ -23,7 +23,7 @@ int main()
     // Binding socket to a port number
     struct sockaddr_in server_addr;
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(8080); // Port number
+    server_addr.sin_port = htons(PORT_NUMBER); // Port number
     server_addr.sin_addr.s_addr = INADDR_ANY; // Bind to all interfaces
 
     if (bind(server_socket, (struct sockaddr*)&server_addr, sizeof(server_addr)) == SOCKET_ERROR) 
@@ -44,7 +44,7 @@ int main()
     }
 
     printf("Waiting for client connections...\n");
-
+int i =0;
     // Accepting clients
     while(1)
     {
@@ -57,7 +57,25 @@ int main()
         }
 
         // Sending HTTP response
-        char response[] = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<h1>Hello, World!</h1>";
+        char buffer[1024]; // added how much info to send using this 
+        int bytes_received = recv(client_socket, buffer, sizeof(buffer) - 1, 0); // ###
+        if (bytes_received > 0) 
+        {
+            buffer[bytes_received] = '\0'; // Null-terminate for printing // ###
+            printf("Received request:\n%s\n", buffer); // ###
+        }
+        char response[] = /*"HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<h1>Hello, World!</h1>";*/
+        "HTTP/1.1 200 OK\r\n"
+                  "Content-Type: text/html\r\n\r\n"
+                  "<html><body><h1></h1>"
+                  "<img src='https://images8.alphacoders.com/463/thumb-1920-463477.jpg' alt='Image'>"
+                  "</body></html>";
+        
+       /* for video links
+       char response[] = "HTTP/1.1 302 Found\r\n"
+                  "Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ\r\n\r\n";
+
+       */
         int send_result = send(client_socket, response, sizeof(response) - 1, 0); // Use sizeof(response) - 1 to avoid sending null terminator
         if (send_result == SOCKET_ERROR)
         {

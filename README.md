@@ -27,4 +27,9 @@ so to make a http server you first need a socket. Now what is a socket?? Sockets
  the end
 
 
+ ### main issues found 
+ when running the http server it was responding to the telnet command but was not running on web browser.
+ the issue was caused by me not sending the content length in the http header
+
+
 
