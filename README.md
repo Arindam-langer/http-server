@@ -16,7 +16,7 @@ i will be using
 so to make a http server you first need a socket. Now what is a socket?? Sockets are a Unix like file structure that helps us communicate with other programs. Everything in Unix is done by using a file descriptor every I/O operation is done using a file descriptor,every communication in the internet will be done using a file descriptor.
 
 
-### steps
+### steps to make a http-server
 
 1. create a socket
 2. bind the socket to ports
@@ -27,9 +27,17 @@ so to make a http server you first need a socket. Now what is a socket?? Sockets
  the end
 
 
- ### main issues found 
- when running the http server it was responding to the telnet command but was not running on web browser.
- the issue was caused by me not sending the content length in the http header
+
+### making a http server in c
+use the basic steps of the http server with the library winsock2.h which is the best socket library and to see the code check it on file [http-server-in-c](http-server.c).
+
+#### issues faced when making http server in C
+when running the http server it was responding to the telnet command but was not running on web browser.
+the issue was caused by me not sending the content length in the http header.
 
 
 
+### making http-server in python
+same as in C i will use the simple steps and a library called socket to make it to, to read the code check it on file [http-server-in-python](http-server.py).
+
+#### issues faced when making http-server in python.
