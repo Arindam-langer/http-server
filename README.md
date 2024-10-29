@@ -1,7 +1,7 @@
 # http-server
 making http server. Because why not!!
 i will making the http servers in three or four languages
-1. c
+1. c (completed success)
 2. python
 3. rust
 4. still thinking about it
