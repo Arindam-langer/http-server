@@ -1,7 +1,7 @@
 # http-server
 making http server. Because why not!!
 i will making the http servers in three or four languages
-1. c (completed)
+1. c (completed success)
 2. python
 3. rust
 4. still thinking about it
@@ -31,7 +31,7 @@ so to make a http server you first need a socket. Now what is a socket?? Sockets
 ### making a http server in c
 use the basic steps of the http server with the library winsock2.h which is the best socket library and to see the code check it on file [http-server-in-c](http-server.c).
 
-#### issues faced when making http server in C
+#### log of when making http server in C
 when running the http server it was responding to the telnet command but was not running on web browser.
 the issue was caused by me not sending the content length in the http header.
 
@@ -40,4 +40,18 @@ the issue was caused by me not sending the content length in the http header.
 ### making http-server in python
 same as in C i will use the simple steps and a library called socket to make it to, to read the code check it on file [http-server-in-python](http-server.py).
 
-#### issues faced when making http-server in python.
+#### log when making http-server in python.
+nothing
+
+
+### making http-server in Rust
+i will do same as i did in c but pre-requisites were to learn so i am making http-server while learning rust so apologies for very detailed commens in the file [http-server-in-rust](http-server\src\main.rs)
+
+#### log of when making an http server in rust
+- did the same stuff but rather than doing work in main made a function for easier readibility. 
+- used threading: very easy to use it and it has many features for working with servers like i used for loop specially made for tcp servers but could've used infinite loop which is not efficient.
+- had anonymous funtions for example on can make functions without names .
+- good error handling with expect function is powerful.
+- new conditional "match". it is used to find the pattern of the output then act on it making it act like a dictionary for handling situations, interesting part. 
+- problem is that line 72 is not runnig right away but running when not need so i have to solve it by making it run on another thread.
+
