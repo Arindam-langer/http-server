@@ -1,10 +1,9 @@
 # http-server
 making http server. Because why not!!
 i will making the http servers in three or four languages
-1. c (completed success)
-2. python
-3. rust
-4. still thinking about it
+1. c (completed)
+2. python (completed)
+3. rust (completed)
 ## tools
 i will be using 
 1. book by beej on network programming [book](https://beej.us/guide/bgnet/)
@@ -45,7 +44,7 @@ nothing
 
 
 ### making http-server in Rust
-i will do same as i did in c but pre-requisites were to learn so i am making http-server while learning rust so apologies for very detailed commens in the file [http-server-in-rust](http-server\src\main.rs)
+i will do same as i did in c but pre-requisites were to learn so i am making http-server while learning rust so apologies for very detailed commens in the file [http-server-in-rust](http-server-in-rust\src\main.rs)
 
 #### log of when making an http server in rust
 - did the same stuff but rather than doing work in main made a function for easier readibility. 
@@ -54,4 +53,11 @@ i will do same as i did in c but pre-requisites were to learn so i am making htt
 - good error handling with expect function is powerful.
 - new conditional "match". it is used to find the pattern of the output then act on it making it act like a dictionary for handling situations, interesting part. 
 - problem is that line 72 is not runnig right away but running when not need so i have to solve it by making it run on another thread.
+
+
+# conclusion
+- making http server is easy when knowing the steps but was interesting.
+- making server in c was hard due to using struct and a very primitive but good library winsock.
+- making server in python was easy kind of too easy due to socket module.
+- making it in rust was kinda hard due to not working on it but by making this i kindo of understand what rust does and it has good features which make it easier to do socket programming in.
 
